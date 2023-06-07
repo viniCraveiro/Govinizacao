@@ -24,7 +24,6 @@ public class VeiculoService {
 
     public Veiculo edit(String id, Veiculo veiculo) {
         if (veiculoRepository.existsById(id)) {
-            veiculo.setId(id);
             return veiculoRepository.save(veiculo);
         } else {
             return null;
