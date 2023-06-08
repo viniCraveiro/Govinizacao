@@ -30,8 +30,8 @@ public class VeiculoService {
         }
     }
 
-    public void save(Veiculo veiculo) {
-        this.veiculoRepository.save(veiculo);
+    public Veiculo save(Veiculo veiculo) {
+        return this.veiculoRepository.save(veiculo);
     }
 
     public boolean remove(String id) {

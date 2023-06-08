@@ -9,7 +9,7 @@ public class Veiculo {
     private String id;
 
     private String placa;
-    private String Identificacao;
+    private String identificacao;
     private String quilometragem;
     private String renavam;
     private String chassi;
@@ -18,7 +18,7 @@ public class Veiculo {
     private String anoModelo;
     private String modelo;
     private String marca;
-    private String tipodeVeiculo;
+    private String tipoVeiculo;
     private String categoriaCnh;
     private String statusVeiculo;
 
@@ -31,11 +31,11 @@ public class Veiculo {
     }
 
     public Veiculo(String id, String placa, String identificacao, String quilometragem, String renavam, String chassi, String cor,
-                   String anoFabricacao, String anoModelo, String modelo, String marca, String tipodeVeiculo, String categoriaCnh,
+                   String anoFabricacao, String anoModelo, String modelo, String marca, String tipoVeiculo, String categoriaCnh,
                    String statusVeiculo) {
         this.id = id;
         this.placa = placa;
-        Identificacao = identificacao;
+        this.identificacao = identificacao;
         this.quilometragem = quilometragem;
         this.renavam = renavam;
         this.chassi = chassi;
@@ -44,7 +44,7 @@ public class Veiculo {
         this.anoModelo = anoModelo;
         this.modelo = modelo;
         this.marca = marca;
-        this.tipodeVeiculo = tipodeVeiculo;
+        this.tipoVeiculo = tipoVeiculo;
         this.categoriaCnh = categoriaCnh;
         this.statusVeiculo = statusVeiculo;
     }
@@ -62,11 +62,11 @@ public class Veiculo {
     }
 
     public String getIdentificacao() {
-        return Identificacao;
+        return identificacao;
     }
 
     public void setIdentificacao(String identificacao) {
-        Identificacao = identificacao;
+        this.identificacao = identificacao;
     }
 
     public String getQuilometragem() {
@@ -133,12 +133,12 @@ public class Veiculo {
         this.marca = marca;
     }
 
-    public String getTipodeVeiculo() {
-        return tipodeVeiculo;
+    public String getTipoVeiculo() {
+        return tipoVeiculo;
     }
 
-    public void setTipodeVeiculo(String tipodeVeiculo) {
-        this.tipodeVeiculo = tipodeVeiculo;
+    public void setTipoVeiculo(String tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
     }
 
     public String getCategoriaCnh() {
