@@ -9,21 +9,23 @@ public class Usuario {
     private String id;
 
     private String nome;
-    private String identificacao;
+    private String cpf;
     private String senha;
     private String status;
     private String classificacao;
+    private String cnh;
 
     public Usuario() {
     }
 
-    public Usuario(String id, String nome, String identificacao, String senha, String status, String classificacao) {
+    public Usuario(String id, String nome, String cpf, String senha, String status, String classificacao, String cnh) {
         this.id = id;
         this.nome = nome;
-        this.identificacao = identificacao;
+        this.cpf = cpf;
         this.senha = senha;
         this.status = status;
         this.classificacao = classificacao;
+        this.cnh = cnh;
     }
 
     public String getId() {
@@ -38,12 +40,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getIdentificacao() {
-        return identificacao;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setIdentificacao(String identificacao) {
-        this.identificacao = identificacao;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getSenha() {
@@ -68,5 +70,13 @@ public class Usuario {
 
     public void setClassificacao(String classificacao) {
         this.classificacao = classificacao;
+    }
+
+    public String getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
     }
 }
