@@ -22,4 +22,8 @@ public class UsuarioService {
         return usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
     }
+
+    public Usuario findByCpf(String cpf) {
+        return usuarioRepository.findByCpf(cpf);
+    }
 }
