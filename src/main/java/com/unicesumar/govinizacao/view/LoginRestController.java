@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v0/login")
+@RequestMapping("/api/v0/login")
 public class LoginRestController {
 
     @Autowired
@@ -19,9 +19,9 @@ public class LoginRestController {
     @PostMapping
     public boolean login(@RequestBody LoginDTO login) {
         Usuario usuario = usuarioService.findByCpf(login.cpf);
-        if (usuario.getSenha().equals(login.senha)){
+        if (usuario.getSenha().equals(login.senha)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

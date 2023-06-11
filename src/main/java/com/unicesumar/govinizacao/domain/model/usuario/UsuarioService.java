@@ -24,6 +24,6 @@ public class UsuarioService {
     }
 
     public Usuario findByCpf(String cpf) {
-        return usuarioRepository.findByCpf(cpf);
+        return usuarioRepository.findByCpf(cpf).orElseThrow(()->new RuntimeException("Usuario nao existe !"));
     }
 }
