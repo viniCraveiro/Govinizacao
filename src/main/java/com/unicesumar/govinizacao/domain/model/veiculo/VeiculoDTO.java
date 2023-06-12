@@ -8,13 +8,11 @@ public class VeiculoDTO {
 
     @NotBlank
     public String placa;
-    public String identificacao;
     public String quilometragem;
     public String renavam;
     public String chassi;
     public String cor;
-    public String anoFabricacao;
-    public String anoModelo;
+    public String ano;
     public String modelo;
     public String marca;
     public String tipoVeiculo;
@@ -28,13 +26,11 @@ public class VeiculoDTO {
     public VeiculoDTO(Veiculo entity) {
         this.id = entity.getId();
         this.placa = entity.getPlaca();
-        this.identificacao = entity.getIdentificacao();
         this.quilometragem = entity.getQuilometragem();
         this.renavam = entity.getRenavam();
         this.chassi = entity.getChassi();
         this.cor = entity.getCor();
-        this.anoFabricacao = entity.getAnoFabricacao();
-        this.anoModelo = entity.getAnoModelo();
+        this.ano = entity.getAno();
         this.modelo = entity.getModelo();
         this.marca = entity.getMarca();
         this.tipoVeiculo = entity.getTipoVeiculo();

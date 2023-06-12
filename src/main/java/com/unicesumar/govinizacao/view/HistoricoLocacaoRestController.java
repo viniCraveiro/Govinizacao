@@ -27,13 +27,11 @@ public class HistoricoLocacaoRestController {
 
     @GetMapping()
     public ResponseEntity<List<Map<String, Object>>> listLocacao() {
-        HashMap<String, Object> map = new HashMap<>();
         List<HistoricoLocacao> historico = mongoOperations.findAll(HistoricoLocacao.class);
-//        map.put("locacao", historicoLocacaoService.findAll());
-        return new ResponseEntity<>(historico.stream().map(this::convertToMap).collect(Collectors.toList()), HttpStatus.OK);
+        return new ResponseEntity<>(historico.stream().map(this::convertToMap).toList(), HttpStatus.OK);
     }
 
-    private Map<String,Object> convertToMap(HistoricoLocacao historicoLocacao) {
+    private Map<String, Object> convertToMap(HistoricoLocacao historicoLocacao) {
         Map<String, Object> map = new HashMap<>();
         map.put("id", historicoLocacao.getId());
         map.put("usuario", historicoLocacao.getUsuario());

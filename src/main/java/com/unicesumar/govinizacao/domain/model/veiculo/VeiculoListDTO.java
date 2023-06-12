@@ -7,10 +7,11 @@ public class VeiculoListDTO {
     public String id;
 
     public String placa;
-    public String identificacao;
     public String cor;
     public String modelo;
     public String marca;
+
+    public String ano;
     public String statusVeiculo;
 
     public VeiculoListDTO() {
@@ -20,10 +21,10 @@ public class VeiculoListDTO {
     public VeiculoListDTO(Veiculo entity) {
         this.id = entity.getId();
         this.placa = entity.getPlaca();
-        this.identificacao = entity.getIdentificacao();
         this.cor = entity.getCor();
         this.modelo = entity.getModelo();
         this.marca = entity.getMarca();
+        this.ano = entity.getAno();
         this.statusVeiculo = entity.getStatusVeiculo();
     }
 

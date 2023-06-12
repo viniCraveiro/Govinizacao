@@ -39,13 +39,11 @@ public class VeiculoRestController {
     public ResponseEntity<VeiculoDTO> save(@RequestBody @Valid VeiculoDTO dto) {
         Veiculo veiculo = new Veiculo();
         veiculo.setPlaca(dto.placa);
-        veiculo.setIdentificacao(dto.identificacao);
         veiculo.setQuilometragem(dto.quilometragem);
         veiculo.setRenavam(dto.renavam);
         veiculo.setChassi(dto.chassi);
         veiculo.setCor(dto.cor);
-        veiculo.setAnoFabricacao(dto.anoFabricacao);
-        veiculo.setAnoModelo(dto.anoModelo);
+        veiculo.setAno(dto.ano);
         veiculo.setModelo(dto.modelo);
         veiculo.setMarca(dto.marca);
         veiculo.setTipoVeiculo(dto.tipoVeiculo);

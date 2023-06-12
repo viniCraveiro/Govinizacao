@@ -9,13 +9,11 @@ public class Veiculo {
     private String id;
 
     private String placa;
-    private String identificacao;
     private String quilometragem;
     private String renavam;
     private String chassi;
     private String cor;
-    private String anoFabricacao;
-    private String anoModelo;
+    private String ano;
     private String modelo;
     private String marca;
     private String tipoVeiculo;
@@ -26,22 +24,16 @@ public class Veiculo {
 
     }
 
-    public Veiculo(String placa) {
-        this.placa = placa;
-    }
-
-    public Veiculo(String id, String placa, String identificacao, String quilometragem, String renavam, String chassi, String cor,
-                   String anoFabricacao, String anoModelo, String modelo, String marca, String tipoVeiculo, String categoriaCnh,
+    public Veiculo(String id, String placa, String quilometragem, String renavam, String chassi, String cor,
+                   String ano, String modelo, String marca, String tipoVeiculo, String categoriaCnh,
                    String statusVeiculo) {
         this.id = id;
         this.placa = placa;
-        this.identificacao = identificacao;
         this.quilometragem = quilometragem;
         this.renavam = renavam;
         this.chassi = chassi;
         this.cor = cor;
-        this.anoFabricacao = anoFabricacao;
-        this.anoModelo = anoModelo;
+        this.ano = ano;
         this.modelo = modelo;
         this.marca = marca;
         this.tipoVeiculo = tipoVeiculo;
@@ -59,14 +51,6 @@ public class Veiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
-    }
-
-    public String getIdentificacao() {
-        return identificacao;
-    }
-
-    public void setIdentificacao(String identificacao) {
-        this.identificacao = identificacao;
     }
 
     public String getQuilometragem() {
@@ -101,20 +85,12 @@ public class Veiculo {
         this.cor = cor;
     }
 
-    public String getAnoFabricacao() {
-        return anoFabricacao;
+    public String getAno() {
+        return ano;
     }
 
-    public void setAnoFabricacao(String anoFabricacao) {
-        this.anoFabricacao = anoFabricacao;
-    }
-
-    public String getAnoModelo() {
-        return anoModelo;
-    }
-
-    public void setAnoModelo(String anoModelo) {
-        this.anoModelo = anoModelo;
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 
     public String getModelo() {
