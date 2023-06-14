@@ -2,7 +2,6 @@ package com.unicesumar.govinizacao.view;
 
 import com.unicesumar.govinizacao.domain.model.usuario.UsuarioRepository;
 import com.unicesumar.govinizacao.domain.model.usuario.UsuarioService;
-import com.unicesumar.govinizacao.domain.model.veiculo.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ public class UsuarioRestController {
 
     UsuarioRepository usuarioRepository;
 
-    public UsuarioRestController(UsuarioRepository usuarioRepository){
+    public UsuarioRestController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 

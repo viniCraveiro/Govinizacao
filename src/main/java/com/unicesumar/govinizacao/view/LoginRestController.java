@@ -19,11 +19,7 @@ public class LoginRestController {
     @PostMapping
     public boolean login(@RequestBody LoginDTO login) {
         Usuario usuario = usuarioService.findByCpf(login.cpf);
-        if (usuario.getSenha().equals(login.senha)) {
-            return true;
-        } else {
-            return false;
-        }
+        return usuario.getSenha().equals(login.senha);
     }
 
 }
