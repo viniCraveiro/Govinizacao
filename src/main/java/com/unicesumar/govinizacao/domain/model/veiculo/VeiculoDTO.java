@@ -38,7 +38,7 @@ public class VeiculoDTO {
         this.statusVeiculo = entity.getStatusVeiculo();
     }
 
-    public VeiculoDTO(String id){
+    public VeiculoDTO(String id) {
         this.id = id;
     }
 }

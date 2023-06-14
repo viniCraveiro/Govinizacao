@@ -1,8 +1,6 @@
 package com.unicesumar.govinizacao.domain.model;
 
 
-import com.unicesumar.govinizacao.domain.model.usuario.Usuario;
-import com.unicesumar.govinizacao.domain.model.veiculo.Veiculo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;

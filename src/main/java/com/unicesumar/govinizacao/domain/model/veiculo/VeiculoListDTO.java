@@ -1,7 +1,5 @@
 package com.unicesumar.govinizacao.domain.model.veiculo;
 
-import java.util.List;
-
 public class VeiculoListDTO {
 
     public String id;
@@ -10,7 +8,6 @@ public class VeiculoListDTO {
     public String cor;
     public String modelo;
     public String marca;
-
     public String ano;
     public String statusVeiculo;
 
@@ -28,7 +25,7 @@ public class VeiculoListDTO {
         this.statusVeiculo = entity.getStatusVeiculo();
     }
 
-    public VeiculoListDTO(String id){
+    public VeiculoListDTO(String id) {
         this.id = id;
     }
 
