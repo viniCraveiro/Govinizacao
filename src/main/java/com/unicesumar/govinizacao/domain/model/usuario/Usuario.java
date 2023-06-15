@@ -3,6 +3,8 @@ package com.unicesumar.govinizacao.domain.model.usuario;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "usuario")
 public class Usuario {
     @Id
@@ -13,12 +15,12 @@ public class Usuario {
     private String senha;
     private String status;
     private String classificacao;
-    private String cnh;
+    private List<String> cnh;
 
     public Usuario() {
     }
 
-    public Usuario(String id, String nome, String cpf, String senha, String status, String classificacao, String cnh) {
+    public Usuario(String id, String nome, String cpf, String senha, String status, String classificacao, List<String> cnh) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -72,11 +74,11 @@ public class Usuario {
         this.classificacao = classificacao;
     }
 
-    public String getCnh() {
+    public List<String> getCnh() {
         return cnh;
     }
 
-    public void setCnh(String cnh) {
+    public void setCnh(List<String> cnh) {
         this.cnh = cnh;
     }
 }

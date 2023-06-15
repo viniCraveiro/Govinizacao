@@ -1,17 +1,14 @@
 package com.unicesumar.govinizacao.view;
 
+import com.unicesumar.govinizacao.domain.model.usuario.Usuario;
 import com.unicesumar.govinizacao.domain.model.usuario.UsuarioRepository;
 import com.unicesumar.govinizacao.domain.model.usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v0/usuario")
@@ -26,16 +23,24 @@ public class UsuarioRestController {
     }
 
     @GetMapping()
-    public ResponseEntity<Map<String, Object>> listUsuarios() {
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("usuarios", usuarioService.findAll());
-        return new ResponseEntity<>(map, HttpStatus.OK);
+    public ResponseEntity<List<Usuario>> listUsuarios() {
+        return new ResponseEntity<>(usuarioService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> findById(@PathVariable String id) {
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("usuario", usuarioService.findById(id));
-        return new ResponseEntity<>(map, HttpStatus.OK);
+    public ResponseEntity<Usuario> findById(@PathVariable String id) {
+        return new ResponseEntity<>(usuarioService.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "", consumes = "application/json")
+    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
+        Usuario user = new Usuario();
+        user.setNome(usuario.getNome());
+        user.setCnh(usuario.getCnh());
+        user.setClassificacao(usuario.getClassificacao());
+        user.setStatus(usuario.getStatus());
+        user.setSenha(usuario.getSenha());
+        Usuario saved = usuarioService.save(usuario);
+        return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 }
