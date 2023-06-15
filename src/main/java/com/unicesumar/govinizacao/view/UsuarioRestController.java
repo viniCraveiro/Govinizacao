@@ -34,13 +34,18 @@ public class UsuarioRestController {
 
     @PostMapping(value = "", consumes = "application/json")
     public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
-        Usuario user = new Usuario();
-        user.setNome(usuario.getNome());
-        user.setCnh(usuario.getCnh());
-        user.setClassificacao(usuario.getClassificacao());
-        user.setStatus(usuario.getStatus());
-        user.setSenha(usuario.getSenha());
-        Usuario saved = usuarioService.save(usuario);
-        return new ResponseEntity<>(saved, HttpStatus.CREATED);
+        if(usuarioRepository.findByCpf(usuario.getCpf()).isEmpty()){
+            Usuario user = new Usuario();
+            user.setNome(usuario.getNome());
+            user.setCnh(usuario.getCnh());
+            user.setClassificacao(usuario.getClassificacao());
+            user.setStatus(usuario.getStatus());
+            user.setSenha(usuario.getSenha());
+            Usuario saved = usuarioService.save(usuario);
+            return new ResponseEntity<>(saved, HttpStatus.CREATED);
+        }else {
+            throw new IllegalArgumentException("Usuario ja existe!");
+        }
+
     }
 }

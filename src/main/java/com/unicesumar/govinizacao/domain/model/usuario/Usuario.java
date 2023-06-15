@@ -20,6 +20,10 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String id){
+        this.id = id;
+    }
+
     public Usuario(String id, String nome, String cpf, String senha, String status, String classificacao, List<String> cnh) {
         this.id = id;
         this.nome = nome;

@@ -20,4 +20,8 @@ public class HistoricoLocacaoService {
         return historicoLocacaoRepository.findAll();
     }
 
+    public HistoricoLocacao save(HistoricoLocacao historicoLocacao){
+        return historicoLocacaoRepository.save(historicoLocacao);
+    }
+
 }

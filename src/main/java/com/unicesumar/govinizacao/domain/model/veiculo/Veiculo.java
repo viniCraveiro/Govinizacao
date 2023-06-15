@@ -24,6 +24,10 @@ public class Veiculo {
 
     }
 
+    public Veiculo(String id){
+        this.id = id;
+    }
+
     public Veiculo(String id, String placa, String quilometragem, String renavam, String chassi, String cor,
                    String ano, String modelo, String marca, String tipoVeiculo, String categoriaCnh,
                    String statusVeiculo) {

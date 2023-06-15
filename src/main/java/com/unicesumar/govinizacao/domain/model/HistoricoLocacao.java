@@ -1,6 +1,10 @@
 package com.unicesumar.govinizacao.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.unicesumar.govinizacao.domain.model.usuario.Usuario;
+import com.unicesumar.govinizacao.domain.model.veiculo.Veiculo;
+import com.unicesumar.govinizacao.domain.model.veiculo.VeiculoDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,30 +19,26 @@ public class HistoricoLocacao {
 
     @Field("usuario")
     @DBRef
-    private String usuario;
+    private Usuario usuario;
 
     @Field("veiculo")
     @DBRef
-    private String veiculo;
+    private Veiculo veiculo;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC")
     private Date dataLocacao;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "UTC")
     private Date dataDevolucao;
-
-    private String ocorrencia;
-
-    private String observacao;
 
     public HistoricoLocacao() {
     }
 
-    public HistoricoLocacao(String usuario, String veiculo, Date dataLocacao, Date dataDevolucao, String ocorrencia, String observacao) {
+    public HistoricoLocacao(Usuario usuario, Veiculo veiculo, Date dataLocacao, Date dataDevolucao) {
         this.usuario = usuario;
         this.veiculo = veiculo;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
-        this.ocorrencia = ocorrencia;
-        this.observacao = observacao;
     }
 
     public String getId() {
@@ -49,19 +49,19 @@ public class HistoricoLocacao {
         this.id = id;
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public String getVeiculo() {
+    public Veiculo getVeiculo() {
         return veiculo;
     }
 
-    public void setVeiculo(String veiculo) {
+    public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
 
@@ -81,19 +81,4 @@ public class HistoricoLocacao {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public String getOcorrencia() {
-        return ocorrencia;
-    }
-
-    public void setOcorrencia(String ocorrencia) {
-        this.ocorrencia = ocorrencia;
-    }
-
-    public String getObservacao() {
-        return observacao;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
 }
