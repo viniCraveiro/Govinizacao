@@ -13,7 +13,7 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String senha;
-    private String status;
+    private String status = "ATIVO";
     private String classificacao;
     private List<String> cnh;
 

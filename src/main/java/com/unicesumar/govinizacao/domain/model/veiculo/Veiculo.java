@@ -18,7 +18,7 @@ public class Veiculo {
     private String marca;
     private String tipoVeiculo;
     private String categoriaCnh;
-    private String statusVeiculo;
+    private String statusVeiculo = "Disponivel";
 
     public Veiculo() {
 

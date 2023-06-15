@@ -33,8 +33,13 @@ public class VeiculoRestController {
         return new ResponseEntity<>(new VeiculoDTO(veiculoService.findById(id)), HttpStatus.OK);
     }
 
+    @GetMapping("/disponivel")
+    public ResponseEntity<List<VeiculoDTO>> findDisponivel() {
+        return new ResponseEntity<>(veiculoService.verifyDisponible().stream().map(VeiculoDTO::new).toList(), HttpStatus.OK);
+    }
+
     @PostMapping(value = "", consumes = "application/json")
-    public ResponseEntity<VeiculoDTO> save(@RequestBody  VeiculoDTO dto) {
+    public ResponseEntity<VeiculoDTO> save(@RequestBody VeiculoDTO dto) {
         Veiculo veiculo = new Veiculo();
         veiculo.setPlaca(dto.placa);
         veiculo.setQuilometragem(dto.quilometragem);

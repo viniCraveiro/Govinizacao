@@ -2,8 +2,8 @@ package com.unicesumar.govinizacao.domain.model.veiculo;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class VeiculoService {
@@ -41,6 +41,17 @@ public class VeiculoService {
         } else {
             return false;
         }
+    }
+
+    public List<Veiculo> verifyDisponible() {
+        ArrayList<Veiculo> disponiveis = new ArrayList<>();
+        List<Veiculo> veiculoList = veiculoRepository.findAll();
+        for (Veiculo veiculo : veiculoList) {
+            if (veiculo.getStatusVeiculo().equals("Disponivel")) {
+                disponiveis.add(veiculo);
+            }
+        }
+        return disponiveis;
     }
 
 }
